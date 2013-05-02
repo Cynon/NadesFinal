@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.game.nadesgame"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <permission
+        android:name="com.game.nadesgame.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+    <permission
+        android:name="com.game.nadesgame.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.game.nadesgame.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.example.mapdemo.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.game.nadesgame.Loading"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.game.nadesgame.CreateAccount"
+            android:label="@string/title_activity_create_account" >
+        </activity>
+        <activity
+            android:name="com.game.nadesgame.AddData"
+            android:label="@string/title_activity_join_game" >
+        </activity>
+        <activity
+            android:name="com.game.nadesgame.JoinOrSignUp"
+            android:label="@string/title_activity_login_screen" >
+        </activity>
+        <activity
+            android:name="com.game.nadesgame.Login"
+            android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name="com.game.nadesgame.GameMenu"
+            android:label="@string/title_activity_join_game" >
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyAy1N4ShQSxCjwJ4h70GqgLNWV12XPtl1w" />
+
+        <uses-library android:name="com.google.android.maps" />
+
+        <activity
+            android:name="com.game.nadesgame.Friends"
+            android:label="@string/title_activity_friends" >
+        </activity>
+        <activity
+            android:name="com.game.nadesgame.Requests"
+            android:label="@string/title_activity_requests" >
+        </activity>
+         <activity
+            android:name="com.game.nadesgame.Mines"
+            android:label="@string/title_activity_mines" >
+        </activity>
+
+        <receiver
+            android:name="com.google.android.gcm.GCMBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.game.nadesgame" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.game.nadesgame.GCMIntentService" />
+
+        <activity
+            android:name="com.game.nadesgame.SetupGame"
+            android:label="@string/title_activity_setup_game" >
+        </activity>
+        <activity
+            android:name="com.play.nadesgame.GameMap"
+            android:label="@string/title_activity_game_map" >
+        </activity>
+    </application>
+
+</manifest>
